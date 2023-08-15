@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+body {
+    font-family: Cabin, sans-serif;
+    background: linear-gradient(360deg, rgb(133, 159, 244), purple);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: rgb(154, 202, 244);
+    padding: 20px;
+    padding-right: 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+select,
+input[type="radio"] {
+    margin: 5px;
+}
+
+button {
+    font-size: medium;
+    padding: 10px 20px;
+    background-color: #f53e3e;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#userData {
+    margin-top: 20px;
+}

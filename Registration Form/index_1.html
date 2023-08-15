@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="url"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        select,
+        input[type="radio"] {
+            margin: 5px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        #userData {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="website">Website:</label>
+            <input type="url" id="website" name="website" required>
+
+            <label for="image">Image Link:</label>
+            <input type="url" id="image" name="image" required>
+
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female" required>
+            <label for="female">Female</label>
+
+            <label for="skills">Skills:</label>
+            <input type="text" id="skills" name="skills" required>
+
+            <button type="button" onclick="displayUserData()">Register</button>
+        </form>
+
+        <div id="userData" style="display: none;">
+            <h3>Registered User Data:</h3>
+            <p><strong>Name:</strong> <span id="displayName"></span></p>
+            <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+            <p><strong>Website:</strong> <span id="displayWebsite"></span></p>
+            <p><strong>Image Link:</strong> <span id="displayImage"></span></p>
+            <p><strong>Gender:</strong> <span id="displayGender"></span></p>
+            <p><strong>Skills:</strong> <span id="displaySkills"></span></p>
+        </div>
+    </div>
+
+    <script>
+        function displayUserData() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const website = document.getElementById("website").value;
+            const image = document.getElementById("image").value;
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const skills = document.getElementById("skills").value;
+
+            document.getElementById("displayName").textContent = name;
+            document.getElementById("displayEmail").textContent = email;
+            document.getElementById("displayWebsite").textContent = website;
+            document.getElementById("displayImage").textContent = image;
+            document.getElementById("displayGender").textContent = gender;
+            document.getElementById("displaySkills").textContent = skills;
+
+            document.getElementById("userData").style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
